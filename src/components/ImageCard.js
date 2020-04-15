@@ -1,14 +1,14 @@
 import React from "react";
 
 const ImageCard = ({ image }) => {
-  const { webformatURL: imageSrc, views, downloads, likes, tags } = image;
+  const { webformatURL: imageSrc, user, views, downloads, likes, tags } = image;
   const tag = tags.split(", ");
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <img src={imageSrc} alt="" className="w-full" />
       <div className="px-6 py-4">
         <div className="font-bold text-purple-500 text-xl mb-2">
-          Photo By {image.user}
+          Photo By {user}
         </div>
         <ul>
           <li>
