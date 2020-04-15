@@ -2,7 +2,7 @@ import React from "react";
 
 const ImageCard = ({ image }) => {
   const { webformatURL: imageSrc, views, downloads, likes, tags } = image;
-  const tag = tags.split(",");
+  const tag = tags.split(", ");
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <img src={imageSrc} alt="" className="w-full" />
@@ -26,10 +26,10 @@ const ImageCard = ({ image }) => {
         </ul>
       </div>
       <div className="px-6 py-4">
-        {tag.map((tag) => (
+        {tag.map((tag, index) => (
           <span
-            key={image.id}
-            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+            key={index}
+            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
           >
             #{tag}
           </span>

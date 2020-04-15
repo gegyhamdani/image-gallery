@@ -4,11 +4,11 @@ import ImageCard from "./components/ImageCard";
 function App() {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [terms, setTerms] = useState("");
+  const [term, setTerm] = useState("");
 
   useEffect(() => {
     fetch(
-      `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${terms}&image_type=photo&pretty=true`
+      `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -16,15 +16,19 @@ function App() {
         setIsLoading(false);
       })
       .catch((err) => console.error(err));
-  }, [terms]);
+  }, [term]);
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-3 gap-4">
-        {images.map((images) => (
-          <ImageCard key={images.id} image={images} />
-        ))}
-      </div>
+      {isLoading ? (
+        <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>
+      ) : (
+        <div className="grid grid-cols-3 gap-4">
+          {images.map((images) => (
+            <ImageCard key={images.id} image={images} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
