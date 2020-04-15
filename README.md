@@ -1,6 +1,7 @@
 ## Image Gallery
 
-Create image gallery with CRA and Tailwinds.css
+Image Gallery apps that created from CRA and Tailwind.css.
+Using pixabay API for image source
 
 ## Available Scripts
 
