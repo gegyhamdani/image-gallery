@@ -18,7 +18,7 @@ Using pixabay API for image source
 
 ### Installations
 
-- clone: `git clone https://github.com/gegyhamdani/movie-list.git`
+- clone: `git clone https://github.com/gegyhamdani/image-gallery.git`
 - install depandencies: `npm install`
 
 ### How To Use
